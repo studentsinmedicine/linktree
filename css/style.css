@@ -1,4 +1,14 @@
-
+@keyframes movelogo
+{
+	0%
+	{
+		transform: translate( 0px, -300px );
+	}
+	100%
+	{
+		transform: translate( 0px, 0px );
+	}
+}
 h1,h2,h3,h4,h5,h6 {
 	color: black;
 	text-align: center;
@@ -9,18 +19,28 @@ h1,h2,h3,h4,h5,h6 {
 body,html {
 	padding: 0;
 	margin: 0;
+	overflow-x: hidden;
+}
+body
+{
+	transition: 1s;
+	opacity: 0;
 }
 
 #wrapper {
-	height: 100vh;
 	width: 100%;
-	background-color: #eee;
+	background-color: #eff5f5;
+	display: inline-block;	
 }
 
 #logo {
+	display: inline-block;
 	width: calc( 5vw + 100px );
 	margin: 50px 0;
 	margin-bottom: 10px;
+	animation-name: movelogo;
+	animation-duration: 0.5s;
+	
 }
 
 h6 {
@@ -49,7 +69,7 @@ button {
 	border-radius: 100px;
 	color: white;
 	text-transform: uppercase;
-	transition: 0.2s;
+	transition: 0.175s;
 	margin: calc( 0.4vw + 10px );
 }
 .btn:hover
@@ -62,4 +82,30 @@ button {
 .btn:focus
 {
 	color: white;
+}
+
+@media ( min-width: 1000px )
+{
+	.btn
+	{	
+		width: 15em;
+		height: 5em;
+		border-radius: 50px;
+		word-break: break-all;
+		
+	}
+	.btn:hover
+	{
+		color: white;
+		background-color: #111;
+		border-color: transparent;
+		transform: scale(1.1);
+	}
+	.impt
+	{
+		box-shadow: 0px 5px 20px #666;
+	}
+}
+h6 a {
+	color: black;
 }
