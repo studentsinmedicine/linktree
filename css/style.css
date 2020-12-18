@@ -83,17 +83,17 @@ body
 }
 #logo1
 {
-	transform: rotateY(-0deg) translateZ(calc( 2vw + 25px ));
+	transform: rotateY(-0deg) translateZ(calc( 2.1vw + 25px ));
 	animation: shadow 5s infinite ;
 }
 #logo2
 {
-	transform: rotateY(-120deg) translateZ(calc( 2vw + 25px ));
+	transform: rotateY(-120deg) translateZ(calc( 2.1vw + 25px ));
 	animation: shadow 5s infinite  1666ms ;
 }
 #logo3
 {
-	transform: rotateY(120deg) translateZ(calc( 2vw + 25px ));
+	transform: rotateY(120deg) translateZ(calc( 2.1vw + 25px ));
 	animation: shadow 5s infinite  3333ms;
 }
 
