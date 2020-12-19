@@ -116,6 +116,11 @@ h6 {
 .icon {
 	width: calc( 0.5vw + 18px );
 	margin: 0 20px;
+	transition: 0.1s;
+}
+.icon:hover
+{
+	transform: scale(1.1);
 }
 
 button {
@@ -123,11 +128,12 @@ button {
 }
 
 .btn {
+	transform-style: preserve-3d;
 	box-shadow: 0px 5px 15px #555;
 	font-size: calc( 0.3vw + 15px );
-	text-decoration: none;
-	height: auto;
 	width: 90%;
+	height: 3.2em;
+	text-decoration: none;
 	padding: calc( 0.5vw + 5px );
 	background-color: black;
 	border-color: transparent;
@@ -136,40 +142,18 @@ button {
 	text-transform: uppercase;
 	transition: 0.175s;
 	margin: calc( 0.4vw + 10px );
+	z-index: 0;
 }
 .btn:hover
 {
 	color: white;
 	background-color: #111;
 	border-color: transparent;
-	transform: scale(1.02);
+	//transform: scale(1.02);
 }
 .btn:focus
 {
 	color: white;
-}
-
-@media ( min-width: 1000px )
-{
-	.btn
-	{	
-		width: 15em;
-		height: 5em;
-		border-radius: 50px;
-		word-break: break-all;
-		
-	}
-	.btn:hover
-	{
-		color: white;
-		background-color: #111;
-		border-color: transparent;
-		transform: scale(1.1);
-	}
-	.impt
-	{
-		box-shadow: 0px 5px 20px #666;
-	}
 }
 h6 a {
 	color: black;
@@ -192,4 +176,171 @@ h6 a {
   	transform-style: preserve-3d;
 	transition: 1s;
 	animation: rot 5s infinite linear
+}
+
+.buttons {
+	display: inline-block; 
+	justify-content: center; 
+	align-items: center; 
+	flex-wrap: wrap;
+	width: 100vw;
+}
+
+.up
+{
+	display: none;
+}
+.bscene
+{
+	margin: 25px 0px;
+	width: 100vw;
+}
+.bfig
+{
+	transform: rotateX(0deg) translateZ(0px);
+	width: 100%;
+}
+
+.btn h1 {
+		transform-style: preserve-3d;
+		transform: translateZ(1px);	
+		color: white;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%, -50%, 20px);
+		font-size: calc( 0.3vw + 15px );
+		font-weight: 700;
+		letter-spacing: .1rem;
+		width: 100%;
+		height: auto;
+	transition: 0.2s;
+}
+.btn .shad {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	color: transparent;
+	text-shadow: 0px 0px 8px  #000;
+	transform: translate3d(-50%, -50%, 0px);
+}
+.up h1
+{
+	transform: translateX(-50%) translateY(-20%) translateZ(20px);
+}
+.up .shad
+{
+	transform: translate3d(-50%, -20%, 0px);
+}
+
+
+@media ( min-width: 1000px )
+{
+	.buttons
+	{
+		display: flex;
+	}
+	.btn
+	{	
+		width: 15em;
+		height: 5em;
+		border-radius: 50px;
+		word-break: break-all;
+		
+	}
+	.btn:hover
+	{
+		color: white;
+		background-color: #111;
+		border-color: transparent;
+		//transform: scale(1.1);
+	}
+	.impt
+	{
+		box-shadow: 0px 5px 20px #666;
+	}
+	.bscene {
+		font-size: calc( 0.3vw + 15px );
+		width: 15em;
+		height: 5em;
+		perspective: 500px;
+		z-index: 0;
+		margin: 15px 10px;
+	}
+	.bfig{
+		width: 100%;
+		height: 100%;	
+		position: relative;
+		transform-style: preserve-3d;
+		transition: 0.2s;
+		transform: rotateX(0deg) translateZ(-100px) 
+	}
+	.bscene .bfig .btn
+	{
+		display: inline-block;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 0px;
+	}
+
+	.front
+	{
+		font-size: calc( 0.3vw + 15px );
+		transform: rotateY(0deg) translateZ( calc( 2.5em ));
+		opacity:1;
+		transition: 0.1s;
+		background-color: #111;
+		z-index: 0;
+	}
+
+	.up
+	{
+		font-size: calc( 0.3vw + 15px );
+		transform: rotateX(90deg) translateZ( calc( 2.5em - 1px ));
+		opacity:1;
+		background-color: #222;
+		transition: 0.1s;
+		box-shadow: none;
+		z-index: 0;
+	}
+
+	.bfig:hover
+	{
+		transform: rotateX(-45deg) translateZ(-50px) translateY(50px);
+		z-index: 10;
+	}
+	.bfig:hover > .up
+	{
+		opacity:1;
+		z-index: 10;
+	}
+	.bfig:hover > .front
+	{
+		opacity:1;
+		box-shadow: none;
+		z-index: 10;
+	}
+	.bfig:hover > .front  h1:first-of-type
+	{
+		color: #eee;
+		transform: translateX(-50%) translateY(-80%) translateZ( 20px )
+	}
+	.bfig:hover > .front .shad
+	{
+		
+		transform: translateX(-50%) translateY(-80%) translateZ( 0px )
+	}
+
+	.up:hover
+	{
+		background-color: #222	;
+	}
+
+	.front:hover
+	{
+		background-color: #111;
+	}
+
 }
