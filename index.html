@@ -167,17 +167,19 @@
 			var margin = document.getElementsByClassName("front")[0].clientHeight - 10;
 			setInterval( function() {
 				//if( document.getElementsByClassName("front")[0].getBoundingClientRect().top + margin < )
-				for( var i = 0; i < document.getElementsByClassName("front").length; i++ ){
-					if( Math.abs(base-  Math.abs ( document.getElementsByClassName("front")[i].getBoundingClientRect().top ) ) <= margin )
-					{
-						document.getElementsByClassName("front")[i].parentElement.className = "bfig open";
+				if( window.innerWidth < 1000 ){
+						for( var i = 0; i < document.getElementsByClassName("front").length; i++ ){
+							if( Math.abs(base-  Math.abs ( document.getElementsByClassName("front")[i].getBoundingClientRect().top ) ) <= margin )
+							{
+								document.getElementsByClassName("front")[i].parentElement.className = "bfig open";
+							}
+							else
+							{	
+								document.getElementsByClassName("front")[i].parentElement.className = "bfig"
+							}
+						}
 					}
-					else
-					{	
-						document.getElementsByClassName("front")[i].parentElement.className = "bfig"
-					}
-				}
-			}, 200);
+				}, 200);
 		</script>
 	</body>
 </html>
