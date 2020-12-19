@@ -234,7 +234,7 @@ h6 a {
 }
 
 
-@media ( min-width: 1000px )
+@media ( min-width: 10px )
 {
 	.buttons
 	{
@@ -306,28 +306,28 @@ h6 a {
 		z-index: 0;
 	}
 
-	.bfig:hover
+	.bfig:hover, .open
 	{
 		transform: rotateX(-45deg) translateZ(-50px) translateY(50px);
 		z-index: 10;
 	}
-	.bfig:hover > .up
+	.bfig:hover > .up, .open > .up
 	{
 		opacity:1;
 		z-index: 10;
 	}
-	.bfig:hover > .front
+	.bfig:hover > .front, .open > .front
 	{
 		opacity:1;
 		box-shadow: none;
 		z-index: 10;
 	}
-	.bfig:hover > .front  h1:first-of-type
+	.bfig:hover > .front  h1:first-of-type, .open > .front  h1:first-of-type
 	{
 		color: #eee;
 		transform: translateX(-50%) translateY(-80%) translateZ( 20px )
 	}
-	.bfig:hover > .front .shad
+	.bfig:hover > .front .shad, .open > .front .shad
 	{
 		
 		transform: translateX(-50%) translateY(-80%) translateZ( 0px )
@@ -343,4 +343,12 @@ h6 a {
 		background-color: #111;
 	}
 
+}
+
+@media( max-width: 1000px )
+{
+	.bscene
+	{
+		width: 90vw;
+	}
 }
